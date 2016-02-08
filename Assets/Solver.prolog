@@ -8,7 +8,9 @@
 :- external implies/2.
 :- external subrole/2, conflicting_roles/1, conflicting_roles/2.
 :- external roles_relation/1, generalization/2.
-:- external symmetric/1, antisymmetric/1, antireflexive/1, left_unique/1, right_unique/1.
+:- external symmetric/1, antisymmetric/1, antireflexive/1,
+   left_unique/1, right_unique/1,
+   unique_role/1.
 :- external transitive/1, transitive_closure/2.
 :- external need/1, object/1, location/1.
 :- external role_need/2, role_object/2, role_location/2.
@@ -152,6 +154,10 @@ contradiction(role(X, Y), role(X, Z)) :-
 
 implies(role(X, Subrole), role(X, Superrole)) :-
    subrole(Subrole, Superrole).
+
+contradiction(role(X, R), role(Y, R)) :-
+   unique_role(R),
+   X \= Y.
 
 % A character can need N if N is a kind of need
 needs(_C, N) :-
