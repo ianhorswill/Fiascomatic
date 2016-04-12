@@ -5,6 +5,11 @@ Temp/
 Library/
 Build/
 
+# ================================== #
+# Where the actual builds are stored #
+# ================================== #
+Builds/
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #

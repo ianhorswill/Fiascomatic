@@ -71,6 +71,11 @@ public class Driver : MonoBehaviour
             Setup();
         }
 
+        if (GUI.Button(new Rect(30, 250, 100, 60), "<b>Quit</b>"))
+        {
+            Application.Quit();
+        }
+
         for (int i = 0; i < playerCount; i++)
         {
             var textposition = PlayerScreenPosition(i);
